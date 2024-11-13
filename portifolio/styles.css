@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1d1d1d, #333);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+
+/* Estilo da navegação */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff007c;
+}
+
+
+/* Botão de alternância de tema */
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.theme-toggle {
+    opacity: 0;
+    position: absolute;
+}
+
+.toggle-slider {
+    width: 50px;
+    height: 25px;
+    background-color: #ff007c;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.toggle-slider::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:checked+.toggle-slider {
+    background-color: #4CAF50;
+    /* Cor do tema claro */
+}
+
+.theme-toggle:checked+.toggle-slider::before {
+    transform: translateX(25px);
+    /* Move o círculo para a direita */
+}
+
+
+/* Estilos para a seção de contato */
+
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #ff007c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Animação nas seções ao rolar a página */
+
+.animated-section {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards ease-in-out;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Estilo das seções */
+
+#perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: #181818;
+}
+
+.profile-content {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ff007c;
+    transition: transform 0.5s;
+}
+
+.profile-pic:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+
+/* Estilos dos projetos */
+
+#projetos,
+#contato {
+    padding: 50px;
+    text-align: center;
+}
+
+.project-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.project-card {
+    width: 200px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff007c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.project-btn:hover {
+    background-color: #ff66b2;
+    transform: scale(1.05);
+}
+
+
+/* Tema claro */
+
+body.light-theme {
+    background: linear-gradient(135deg, #fff, #ddd);
+    color: #333;
+}
+
+
+/* Tema escuro */
+
+body.dark-theme {
+    background: linear-gradient(135deg, #1d1d1d, #333);
+    color: white;
+}
